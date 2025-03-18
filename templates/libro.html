@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Libros</h1>
+<form action="/add_libro" method="POST" class="mb-3">
+    <input type="text" name="titulo" placeholder="Título" required>
+    <input type="text" name="autor" placeholder="Autor" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<ul class="list-group">
+    {% for libro in libros %}
+        <li class="list-group-item">
+            {{ libro.titulo }} - {{ libro.autor }}
+            <form action="/update_libro/{{ libro._id }}" method="POST" style="display:inline;">
+                <input type="text" name="titulo" placeholder="Nuevo título" required>
+                <input type="text" name="autor" placeholder="Nuevo autor" required>
+                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
+            </form>
+            <a href="/delete_libro/{{ libro._id }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

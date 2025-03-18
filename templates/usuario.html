@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Usuarios</h1>
+<form action="/add_usuario" method="POST" class="mb-3">
+    <input type="text" name="nombre" placeholder="Nombre del usuario" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<ul class="list-group">
+    {% for usuario in usuarios %}
+        <li class="list-group-item">
+            {{ usuario.nombre }}
+            <form action="/update_usuario/{{ usuario._id }}" method="POST" style="display:inline;">
+                <input type="text" name="nombre" placeholder="Nuevo nombre" required>
+                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
+            </form>
+            <a href="/delete_usuario/{{ usuario._id }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

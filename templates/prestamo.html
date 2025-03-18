@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Préstamos</h1>
+<form action="/add_prestamo" method="POST" class="mb-3">
+    <input type="text" name="usuario_id" placeholder="ID Usuario" required>
+    <input type="text" name="libro_id" placeholder="ID Libro" required>
+    <input type="date" name="fecha_prestamo" placeholder="Fecha Préstamo" required>
+    <input type="date" name="fecha_devolucion" placeholder="Fecha Devolución" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<ul class="list-group">
+    {% for prestamo in prestamos %}
+        <li class="list-group-item">
+            Usuario ID: {{ prestamo.usuario_id }} - Libro ID: {{ prestamo.libro_id }} - Préstamo: {{ prestamo.fecha_prestamo }} - Devolución: {{ prestamo.fecha_devolucion }}
+            <form action="/update_prestamo/{{ prestamo._id }}" method="POST" style="display:inline;">
+                <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
+                <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
+                <input type="date" name="fecha_prestamo" placeholder="Nueva Fecha Préstamo" required>
+                <input type="date" name="fecha_devolucion" placeholder="Nueva Fecha Devolución" required>
+                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
+            </form>
+            <a href="/delete_prestamo/{{ prestamo._id }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

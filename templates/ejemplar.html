@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Ejemplares</h1>
+<form action="/add_ejemplar" method="POST" class="mb-3">
+    <input type="text" name="codigo" placeholder="Código" required>
+    <input type="text" name="estado" placeholder="Estado" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<ul class="list-group">
+    {% for ejemplar in ejemplares %}
+        <li class="list-group-item">
+            {{ ejemplar.codigo }} - {{ ejemplar.estado }}
+            <form action="/update_ejemplar/{{ ejemplar._id }}" method="POST" style="display:inline;">
+                <input type="text" name="codigo" placeholder="Nuevo código" required>
+                <input type="text" name="estado" placeholder="Nuevo estado" required>
+                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
+            </form>
+            <a href="/delete_ejemplar/{{ ejemplar._id }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

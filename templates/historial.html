@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Historial</h1>
+<form action="/add_historial" method="POST" class="mb-3">
+    <input type="text" name="usuario_id" placeholder="ID Usuario" required>
+    <input type="text" name="libro_id" placeholder="ID Libro" required>
+    <input type="text" name="accion" placeholder="Acción" required>
+    <input type="date" name="fecha" placeholder="Fecha" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+<ul class="list-group">
+    {% for historial in historiales %}
+        <li class="list-group-item">
+            Usuario ID: {{ historial.usuario_id }} - Libro ID: {{ historial.libro_id }} - Acción: {{ historial.accion }} - Fecha: {{ historial.fecha }}
+            <form action="/update_historial/{{ historial._id }}" method="POST" style="display:inline;">
+                <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
+                <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
+                <input type="text" name="accion" placeholder="Nueva Acción" required>
+                <input type="date" name="fecha" placeholder="Nueva Fecha" required>
+                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
+            </form>
+            <a href="/delete_historial/{{ historial._id }}" class="btn btn-sm btn-danger">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
