@@ -7,17 +7,32 @@
     <input type="text" name="estado" placeholder="Estado" required>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
-<ul class="list-group">
-    {% for ejemplar in ejemplares %}
-        <li class="list-group-item">
-            {{ ejemplar.codigo }} - {{ ejemplar.estado }}
-            <form action="/update_ejemplar/{{ ejemplar._id }}" method="POST" style="display:inline;">
-                <input type="text" name="codigo" placeholder="Nuevo código" required>
-                <input type="text" name="estado" placeholder="Nuevo estado" required>
-                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
-            </form>
-            <a href="/delete_ejemplar/{{ ejemplar._id }}" class="btn btn-sm btn-danger">Eliminar</a>
-        </li>
-    {% endfor %}
-</ul>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ejemplar in ejemplares %}
+        <tr>
+            <td>{{ ejemplar._id }}</td>
+            <td>{{ ejemplar.codigo }}</td>
+            <td>{{ ejemplar.estado }}</td>
+            <td>
+                <form action="/update_ejemplar/{{ ejemplar._id }}" method="POST" style="display:inline;">
+                    <input type="text" name="codigo" placeholder="Nuevo código" required>
+                    <input type="text" name="estado" placeholder="Nuevo estado" required>
+                    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
+                </form>
+                <a href="/delete_ejemplar/{{ ejemplar._id }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

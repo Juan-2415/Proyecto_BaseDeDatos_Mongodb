@@ -9,19 +9,38 @@
     <input type="date" name="fecha" placeholder="Fecha" required>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
-<ul class="list-group">
-    {% for historial in historiales %}
-        <li class="list-group-item">
-            Usuario ID: {{ historial.usuario_id }} - Libro ID: {{ historial.libro_id }} - Acción: {{ historial.accion }} - Fecha: {{ historial.fecha }}
-            <form action="/update_historial/{{ historial._id }}" method="POST" style="display:inline;">
-                <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
-                <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
-                <input type="text" name="accion" placeholder="Nueva Acción" required>
-                <input type="date" name="fecha" placeholder="Nueva Fecha" required>
-                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
-            </form>
-            <a href="/delete_historial/{{ historial._id }}" class="btn btn-sm btn-danger">Eliminar</a>
-        </li>
-    {% endfor %}
-</ul>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario ID</th>
+            <th>Libro ID</th>
+            <th>Acción</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for historial in historiales %}
+        <tr>
+            <td>{{ historial._id }}</td>
+            <td>{{ historial.usuario_id }}</td>
+            <td>{{ historial.libro_id }}</td>
+            <td>{{ historial.accion }}</td>
+            <td>{{ historial.fecha }}</td>
+            <td>
+                <form action="/update_historial/{{ historial._id }}" method="POST" style="display:inline;">
+                    <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
+                    <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
+                    <input type="text" name="accion" placeholder="Nueva Acción" required>
+                    <input type="date" name="fecha" placeholder="Nueva Fecha" required>
+                    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
+                </form>
+                <a href="/delete_historial/{{ historial._id }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

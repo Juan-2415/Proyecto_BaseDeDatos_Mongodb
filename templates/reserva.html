@@ -8,18 +8,35 @@
     <input type="date" name="fecha" placeholder="Fecha" required>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
-<ul class="list-group">
-    {% for reserva in reservas %}
-        <li class="list-group-item">
-            Usuario ID: {{ reserva.usuario_id }} - Libro ID: {{ reserva.libro_id }} - Fecha: {{ reserva.fecha }}
-            <form action="/update_reserva/{{ reserva._id }}" method="POST" style="display:inline;">
-                <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
-                <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
-                <input type="date" name="fecha" placeholder="Nueva Fecha" required>
-                <button type="submit" class="btn btn-sm btn-warning">Actualizar</button>
-            </form>
-            <a href="/delete_reserva/{{ reserva._id }}" class="btn btn-sm btn-danger">Eliminar</a>
-        </li>
-    {% endfor %}
-</ul>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario ID</th>
+            <th>Libro ID</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva._id }}</td>
+            <td>{{ reserva.usuario_id }}</td>
+            <td>{{ reserva.libro_id }}</td>
+            <td>{{ reserva.fecha }}</td>
+            <td>
+                <form action="/update_reserva/{{ reserva._id }}" method="POST" style="display:inline;">
+                    <input type="text" name="usuario_id" placeholder="Nuevo ID Usuario" required>
+                    <input type="text" name="libro_id" placeholder="Nuevo ID Libro" required>
+                    <input type="date" name="fecha" placeholder="Nueva Fecha" required>
+                    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
+                </form>
+                <a href="/delete_reserva/{{ reserva._id }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
