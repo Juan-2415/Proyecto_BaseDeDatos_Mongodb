@@ -20,16 +20,11 @@
     <tbody>
         {% for libro in libros %}
         <tr>
-            <td>{{ libro._id }}</td>
+            <td>{{ libro.id }}</td>
             <td>{{ libro.titulo }}</td>
             <td>{{ libro.autor }}</td>
             <td>
-                <form action="/update_libro/{{ libro._id }}" method="POST" style="display:inline;">
-                    <input type="text" name="titulo" placeholder="Nuevo título" required>
-                    <input type="text" name="autor" placeholder="Nuevo autor" required>
-                    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
-                </form>
-                <a href="/delete_libro/{{ libro._id }}" class="btn btn-danger btn-sm">Eliminar</a>
+                <!-- Formulario de actualización similar a usuario.html -->
             </td>
         </tr>
         {% endfor %}
