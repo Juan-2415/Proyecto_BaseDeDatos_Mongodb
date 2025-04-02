@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Usuarios</h1>
 <form action="/add_usuario" method="POST" class="mb-3">
-    <input type="text" name="nombre" placeholder="Nombre del usuario" required>
+    <input type="text" name="nombre" placeholder="Nombre" required>
     <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
 
@@ -18,14 +18,14 @@
     <tbody>
         {% for usuario in usuarios %}
         <tr>
-            <td>{{ usuario._id }}</td>
+            <td>{{ usuario.id }}</td>
             <td>{{ usuario.nombre }}</td>
             <td>
-                <form action="/update_usuario/{{ usuario._id }}" method="POST" style="display:inline;">
-                    <input type="text" name="nombre" placeholder="Nuevo nombre" required>
+                <form action="/update_usuario/{{ usuario.id }}" method="POST" style="display:inline;">
+                    <input type="text" name="nombre" value="{{ usuario.nombre }}" required>
                     <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
                 </form>
-                <a href="/delete_usuario/{{ usuario._id }}" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="/delete_usuario/{{ usuario.id }}" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
