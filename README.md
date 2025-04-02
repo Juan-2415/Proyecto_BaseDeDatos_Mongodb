@@ -15,11 +15,11 @@ _Aplicación Flask para gestionar una biblioteca usando MongoDB como base de dat
    ```bash
    git clone https://github.com/tu_usuario/biblioteca_mongodb.git
    cd biblioteca_mongodb
-###Instala dependencias:
+### Instala dependencias:
 pip install -r requirements.txt
-###Configura MongoDB en app.py:
+### Configura MongoDB en app.py:
 app.config["MONGO_URI"] = "mongodb://localhost:27017/biblioteca"
-###Ejecuta:
+### Ejecuta:
 python app.py
 ###🗂️ Estructura
 
