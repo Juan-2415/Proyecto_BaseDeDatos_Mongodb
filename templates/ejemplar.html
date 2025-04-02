@@ -3,21 +3,13 @@
 {% block content %}
 <h1>Ejemplares</h1>
 <form action="/add_ejemplar" method="POST" class="mb-3">
-    <div class="row g-2">
-        <div class="col-md">
-            <input type="text" class="form-control" name="codigo" placeholder="Código" required>
-        </div>
-        <div class="col-md">
-            <input type="text" class="form-control" name="estado" placeholder="Estado" required>
-        </div>
-        <div class="col-md-auto">
-            <button type="submit" class="btn btn-primary">Agregar</button>
-        </div>
-    </div>
+    <input type="text" name="codigo" placeholder="Código" required>
+    <input type="text" name="estado" placeholder="Estado" required>
+    <button type="submit" class="btn btn-primary">Agregar</button>
 </form>
 
-<table class="table table-striped table-hover">
-    <thead class="table-dark">
+<table class="table table-striped">
+    <thead>
         <tr>
             <th>ID</th>
             <th>Código</th>
@@ -28,18 +20,16 @@
     <tbody>
         {% for ejemplar in ejemplares %}
         <tr>
-            <td>{{ ejemplar.id }}</td>
+            <td>{{ ejemplar._id }}</td>
             <td>{{ ejemplar.codigo }}</td>
             <td>{{ ejemplar.estado }}</td>
             <td>
-                <form action="/update_ejemplar/{{ ejemplar.id }}" method="POST" class="d-inline">
-                    <div class="input-group input-group-sm">
-                        <input type="text" class="form-control form-control-sm" name="codigo" value="{{ ejemplar.codigo }}" required>
-                        <input type="text" class="form-control form-control-sm" name="estado" value="{{ ejemplar.estado }}" required>
-                        <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
-                    </div>
+                <form action="/update_ejemplar/{{ ejemplar._id }}" method="POST" style="display:inline;">
+                    <input type="text" name="codigo" placeholder="Nuevo código" required>
+                    <input type="text" name="estado" placeholder="Nuevo estado" required>
+                    <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
                 </form>
-                <a href="/delete_ejemplar/{{ ejemplar.id }}" class="btn btn-danger btn-sm ms-1">Eliminar</a>
+                <a href="/delete_ejemplar/{{ ejemplar._id }}" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
