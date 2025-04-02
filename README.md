@@ -25,7 +25,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/biblioteca"
 python app.py
 
 ### 🗂️ Estructura
-
+```
 biblioteca_crud/
 ├── templates/
 │   ├── base.html
@@ -34,6 +34,7 @@ biblioteca_crud/
 │   └── ...
 ├── app.py              # Lógica con PyMongo
 └── requirements.txt    # Flask + PyMongo
+```
 
 ### 🛠️ Tecnologías
 Flask: Framework web.
