@@ -44,10 +44,11 @@ PyMongo: Driver para MongoDB.
 MongoDB Atlas: Base de datos en la nube.
 
 ### 📌 Ejemplo de Datos
-// Colección "prestamos"
+```// Colección "prestamos"
 {
   "usuario_id": "001",
   "ejemplar_id": "101",
   "fecha": "2023-10-05",
   "estado": "activo"
 }
+```
