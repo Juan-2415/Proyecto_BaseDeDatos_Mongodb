@@ -17,11 +17,14 @@ _Aplicación Flask para gestionar una biblioteca usando MongoDB como base de dat
    cd biblioteca_mongodb
 ### Instala dependencias:
 pip install -r requirements.txt
+
 ### Configura MongoDB en app.py:
 app.config["MONGO_URI"] = "mongodb://localhost:27017/biblioteca"
+
 ### Ejecuta:
 python app.py
-###🗂️ Estructura
+
+### 🗂️ Estructura
 
 biblioteca_crud/
 ├── templates/
@@ -31,14 +34,15 @@ biblioteca_crud/
 │   └── ...
 ├── app.py              # Lógica con PyMongo
 └── requirements.txt    # Flask + PyMongo
-###🛠️ Tecnologías
+
+### 🛠️ Tecnologías
 Flask: Framework web.
 
 PyMongo: Driver para MongoDB.
 
 MongoDB Atlas: Base de datos en la nube.
 
-###📌 Ejemplo de Datos
+### 📌 Ejemplo de Datos
 // Colección "prestamos"
 {
   "usuario_id": "001",
