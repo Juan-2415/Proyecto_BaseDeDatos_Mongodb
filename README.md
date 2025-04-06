@@ -62,7 +62,8 @@ venv\Scripts\activate     # Windows  ``
 │   ├── reserva.html      # CRUD Reservas  
 │   ├── prestamo.html     # CRUD Préstamos  
 │   └── historial.html    # CRUD Historial  
-└── README.md             # Este archivo  ```
+└── README.md             # Este archivo
+```
 
 ###🔍 Funcionalidades
 
