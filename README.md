@@ -65,7 +65,7 @@ venv\Scripts\activate     # Windows  ``
 └── README.md             # Este archivo
 ```
 
-###🔍 Funcionalidades
+### 🔍 Funcionalidades
 
 **Operaciones CRUD para cada colección:**
 
