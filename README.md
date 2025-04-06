@@ -1,54 +1,87 @@
+#📚 Proyecto CRUD para Biblioteca con MongoDB y Flask
 
-# Sistema de Biblioteca con MongoDB 🍃
+_Este proyecto es un sistema de gestión de biblioteca que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las colecciones:._
+**Usuarios, Libros, Ejemplares, Reservas, Préstamos e Historial,** utilizando:
 
-_Aplicación Flask para gestionar una biblioteca usando MongoDB como base de datos NoSQL. Ideal para manejar datos flexibles como historiales de préstamos, reservas y ejemplares._
+- **Backend:** Python + Flask
+- **Base de datos: **MongoDB
+- **Frontend:** HTML + Bootstrap
 
-## 🚀 Comenzando
+##🛠️ Tecnologías Utilizadas
+
+| **tecnologia**  |**funcion**   |
+| ------------ | ------------ |
+| Python 3  |Lenguaje principal del backend   |
+| Flask  | Framework web para rutas y lógica  |
+| PyMongo  | Conexión con MongoDB  |
+| MongoDB  |  Base de datos NoSQL |
+| Bootstrap 5  | Diseño responsive de las plantillas  |
+|Git  |Control de versiones   |
+
 
 ### 📋 Pre-requisitos
 - Python 3.8+
-- MongoDB (local o Atlas)
+- MongoDB
 - Pip
 
-### 🔧 Instalación
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tu_usuario/biblioteca_mongodb.git
-   cd biblioteca_mongodb
-### Instala dependencias:
-pip install -r requirements.txt
+###🚀 Instalación y Configuración
+**1. Clona el repositorio**
 
-### Configura MongoDB en app.py:
-app.config["MONGO_URI"] = "mongodb://localhost:27017/biblioteca"
+   ``git clone https://github.com/tu-usuario/Proyecto_BaseDeDatos_Mongodb.git  
+cd Proyecto_BaseDeDatos_Mongodb  ``
 
-### Ejecuta:
-python app.py
+**2. Crear un entorno virtual**
 
-### 🗂️ Estructura
-```
-biblioteca_crud/
-├── templates/
-│   ├── base.html
-│   ├── ejemplar.html   # CRUD ejemplares (MongoDB)
-│   ├── historial.html  # Historial (MongoDB)
-│   └── ...
-├── app.py              # Lógica con PyMongo
-└── requirements.txt    # Flask + PyMongo
-```
+``python -m venv venv  
+source venv/bin/activate  # Linux/macOS  
+venv\Scripts\activate     # Windows  ``
 
-### 🛠️ Tecnologías
-Flask: Framework web.
+**3. Instalar dependencias**
 
-PyMongo: Driver para MongoDB.
+``pip install -r requirements.txt  ``
 
-MongoDB Atlas: Base de datos en la nube.
+**4. Configurar MongoDB**
 
-### 📌 Ejemplo de Datos
-```// Colección "prestamos"
-{
-  "usuario_id": "001",
-  "ejemplar_id": "101",
-  "fecha": "2023-10-05",
-  "estado": "activo"
-}
-```
+- Asegúrate de tener MongoDB instalado y el servicio en ejecución (en el cmd "mongod").
+- La aplicación se conecta por defecto a mongodb://localhost:27017/biblioteca.
+
+5. Ejecutar la aplicación
+
+``python app.py  ``
+
+###📂 Estructura del Proyecto
+
+``Proyecto_BaseDeDatos_Mongodb/  
+├── app.py                # Backend (rutas y lógica)  
+├── requirements.txt      # Dependencias  
+├── templates/            # Plantillas HTML  
+│   ├── base.html         # Plantilla común  
+│   ├── usuario.html      # CRUD Usuarios  
+│   ├── libro.html        # CRUD Libros  
+│   ├── ejemplar.html     # CRUD Ejemplares  
+│   ├── reserva.html      # CRUD Reservas  
+│   ├── prestamo.html     # CRUD Préstamos  
+│   └── historial.html    # CRUD Historial  
+└── README.md             # Este archivo  ``
+
+###🔍 Funcionalidades
+
+**Operaciones CRUD para cada colección:**
+
+- Crear registros (usuarios, libros, etc.).
+- Leer/visualizar datos en tablas Bootstrap.
+- Actualizar registros existentes.
+- Eliminar registros.
+
+**Interfaz intuitiva**
+
+- Menú de navegación entre secciones.
+
+- Formularios integrados en las tablas.
+
+- Diseño responsive gracias a Bootstrap.
+
+### 📬 Contacto
+✉️ Email: gomezhiguitajuan@gmail.com
+
+<p align="center"> ✨ **¡Gracias por usar este proyecto!** ✨ </p>
