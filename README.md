@@ -1,4 +1,4 @@
-#📚 Proyecto CRUD para Biblioteca con MongoDB y Flask
+# 📚 Proyecto CRUD para Biblioteca con MongoDB y Flask
 
 _Este proyecto es un sistema de gestión de biblioteca que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las colecciones:._
 **Usuarios, Libros, Ejemplares, Reservas, Préstamos e Historial,** utilizando:
@@ -7,7 +7,7 @@ _Este proyecto es un sistema de gestión de biblioteca que permite realizar oper
 - **Base de datos: **MongoDB
 - **Frontend:** HTML + Bootstrap
 
-##🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías Utilizadas
 
 | **tecnologia**  |**funcion**   |
 | ------------ | ------------ |
@@ -24,7 +24,7 @@ _Este proyecto es un sistema de gestión de biblioteca que permite realizar oper
 - MongoDB
 - Pip
 
-###🚀 Instalación y Configuración
+### 🚀 Instalación y Configuración
 **1. Clona el repositorio**
 
    ``git clone https://github.com/tu-usuario/Proyecto_BaseDeDatos_Mongodb.git  
@@ -49,9 +49,9 @@ venv\Scripts\activate     # Windows  ``
 
 ``python app.py  ``
 
-###📂 Estructura del Proyecto
+### 📂 Estructura del Proyecto
 
-``Proyecto_BaseDeDatos_Mongodb/  
+```Proyecto_BaseDeDatos_Mongodb/  
 ├── app.py                # Backend (rutas y lógica)  
 ├── requirements.txt      # Dependencias  
 ├── templates/            # Plantillas HTML  
@@ -62,7 +62,7 @@ venv\Scripts\activate     # Windows  ``
 │   ├── reserva.html      # CRUD Reservas  
 │   ├── prestamo.html     # CRUD Préstamos  
 │   └── historial.html    # CRUD Historial  
-└── README.md             # Este archivo  ``
+└── README.md             # Este archivo  ```
 
 ###🔍 Funcionalidades
 
