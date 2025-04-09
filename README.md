@@ -1,10 +1,11 @@
 # 📚 Proyecto CRUD para Biblioteca con MongoDB y Flask
+![Mongidb y python](descargas/pymongo.png)
 
 _Este proyecto es un sistema de gestión de biblioteca que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre las colecciones:._
 **Usuarios, Libros, Ejemplares, Reservas, Préstamos e Historial,** utilizando:
 
 - **Backend:** Python + Flask
-- **Base de datos: **MongoDB
+- **Base de datos:** MongoDB
 - **Frontend:** HTML + Bootstrap
 
 ## 🛠️ Tecnologías Utilizadas
@@ -64,6 +65,8 @@ venv\Scripts\activate     # Windows  ``
 │   └── historial.html    # CRUD Historial  
 └── README.md             # Este archivo
 ```
+### Diagrama de casos de uso
+![diagrama](documentos/Diagrama_crud_mysql.png)
 
 ### 🔍 Funcionalidades
 
