@@ -64,7 +64,7 @@ venv\Scripts\activate     # Windows  ``
 │   └── historial.html    # CRUD Historial  
 └── README.md             # Este archivo
 ```
-### Diagrama de casos de uso
+### 📋Diagrama de casos de uso
 ![diagrama](Diagrama_mejorado_crud.png)
 
 ### 🔍 Funcionalidades
