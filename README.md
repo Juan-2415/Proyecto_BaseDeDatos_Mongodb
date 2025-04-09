@@ -69,6 +69,9 @@ app.config['MYSQL_DB'] = 'biblioteca'
 │   └── historial.html    # CRUD Historial  
 └── README.md             # Este archivo  
 ```
+### 📋Diagrama de casos de uso
+
+![diagrama](Diagrama_mejorado_crud.png)
 
 ### 🔍 Funcionalidades
 
