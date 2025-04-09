@@ -4,7 +4,7 @@ _Este proyecto es un sistema de gestión de biblioteca que permite realizar oper
 **Usuarios, Libros, Ejemplares, Reservas, Préstamos e Historial,** utilizando:
 
 - **Backend:** Python + Flask
-- **Base de datos: **MySQL
+- **Base de datos:** MySQL
 - **Frontend:** HTML + Bootstrap
 
 ## 🛠️ Tecnologías Utilizadas
